@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    color: aliceblue;
+}
+body{
+     background-color: #1f1b1b;
+}
+nav {
+      background: #222;
+      padding: 0 15px;
+      align-items: center;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .menu,
+    .submenu {
+      list-style-type: none;
+    }
+    .logo a{
+      font-size: 30px;
+      padding: 7.5px 10px 7.5px 0;
+    }
+    .nav-link {
+      padding: 10px;
+    }
+  
+    .nav-link:not(.button) a:hover,
+    .nav-link a:hover::after {
+      color: #ccc;
+    }
+    /* Mobile menu */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu li a {
+      display: block;
+      padding: 15px 5px;
+    }
+    .menu li.subitem a {
+      padding: 15px;
+    }
+    .toggle {
+      order: 1;
+      font-size: 20px;
+    }
+    .nav-link.button {
+      order: 2;
+    }
+    .toggle img{
+       height: 1.5em;
+    }
+    .nav-link {
+      order: 3;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    .active .nav-link{
+      display: block;
+    }
+    .button.secondary {
+      /* divider between buttons and menu links */
+      border-bottom: 1px #444 solid;
+    }
+    /* Submenu up from mobile screens */
+    .submenu {
+      display: none;
+    }
+    .submenu-active .submenu {
+      display: block;
+    }
+    .has-submenu i {
+      font-size: 12px;
+    }
+    .has-submenu > a::after {
+      font-family: "Font Awesome 5 Free";
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 900;
+      content: "\f078";
+      color: white;
+      padding-left: 5px;
+    }
+    .subitem a {
+      padding: 10px 15px;
+    }
+    .submenu-active {
+      background-color: #111;
+      border-radius: 3px;
+    }
+    
+    /* Tablet menu */
+    @media all and (min-width: 700px) {
+      .menu {
+        justify-content: center;
+      }
+      .logo {
+        flex: 1;
+      }
+      .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+      }
+      .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+      }
+      /* Button up from tablet screen */
+      .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+      }
+      .button a {
+        background: #ff8e31;
+        border: none;
+        border-radius: 13px;
+      }
+      .button.secondary {
+        border: 0;
+      }
+      .button a:hover {
+        text-decoration: none;
+      }
+      .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+      }
+    }
+    /* Desktop menu */
+    @media all and (min-width: 960px) {
+      .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+      }
+      .logo {
+        order: 0;
+      }
+      .nav-link {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+      }
+      .button {
+        order: 2;
+      }
+      .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #111;
+      }
+      .toggle {
+        display: none;
+      }
+      .submenu-active {
+        border-radius: 0;
+      }
+    }
+main{
+      display: flex;
+      justify-content: space-around;
+      padding-inline: 3em;
+      padding-top: 7rem;
+      padding-bottom: 5rem;
+      gap: 3em;
+      align-items: center;
+}
+.main-text{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6em;
+  margin-top: -10em;
+     
+}
+.main-text h1{
+      font-size: 4em;
+}
+.main-text h1 span{
+   background: -webkit-linear-gradient(#ff9900, #1d0c00);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+.main-img img{
+       height: 40rem; 
+       margin-top: -4em;
+       width: auto;
+}
+.btns{
+     display: flex;
+     gap: 2em;
+}
+.explore{
+      background-color: #907b45;
+      border: none;
+      padding-inline: 3em;
+      padding-block: 0.1px;
+      font-size: 1em;
+      border-radius: 30px;
+      font-weight: 700;
+}
+.create{ 
+    border: none;
+    padding-inline: 3em;
+    padding-block: 0.7em;
+    border-radius: 30px;
+    font-size: 1em;
+    border: 2px solid #907b45;
+    background: none;
+}
+@media screen  and (max-width: 830px){
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 3em;
+    }
+}
+article{
+     padding-inline: 3em;
+}
+.cards{
+     display: grid;
+     padding-inline: 1em;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 4fr));
+      gap: 1em;
+}
+article h1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: -webkit-linear-gradient(#ffbc57, #6d2e02);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 3em;
+      margin-bottom: 40px;
+}
+.sol img{
+      height: 2.5em;
+      background-color: #1f1b1b;
+      border-radius: 100%;
+      padding: 10px;
+}
+.card{
+      background-color: #473e3e;
+      padding: 1em;
+      width: 17rem;
+      border-radius: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      box-shadow: #292323 4px  4px 4px 4px;
+}
+.card img:first-child{
+      border-radius: 10px;
+      width: 100%;
+}
+.sol{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.card span:last-child{
+      display: flex;
+      gap: 1em;
+}
+.card span:last-child div h4{
+     margin-bottom: 5px;
+}
+.card span:last-child div:last-child p{
+      color: rgb(0, 255, 242);
+}
+.items{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+}
+.items span{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1.5rem
+}
+
+.item{
+     border: none;
+     padding-inline: 3em;
+     padding-block: 0.7em;
+     border-radius: 30px;
+     font-size: 1em;
+     border: 2px solid #00f7ff;
+     background: none;
+}
+@media screen  and (max-width: 1100px){
+     .items span{
+            grid-template-columns: repeat(4, 1fr);
+     } 
+}
+@media screen  and (max-width: 1000px){
+     .items span{
+            grid-template-columns: repeat(3, 1fr);
+     } 
+}
+@media screen  and (max-width: 800px){
+     .items span{
+            grid-template-columns: repeat(2, 1fr);
+     } 
+}
+.create-sell{
+      padding-inline: 5em;
+      padding-block: 10em;
+}
+.create-sell .list{
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+}
+.create-sell .list span{
+      text-align: center;
+      align-items: center;
+}
+.create-sell .list span h4{
+      font-size: 2em;
+      margin-bottom: 20px;
+}
+.create-sell .list span img{
+      height: 2em;
+      margin-bottom: 1em;
+}
+.create-sell h2{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+       font-size: 3em;
+       background: -webkit-linear-gradient(#ffe606, #da6614);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       margin-bottom: 1em;
+}
+@media screen  and (max-width: 1100px){
+     .create-sell .list{
+          grid-template-columns: repeat(2, 1fr);
+     }
+            
+     } 
+
+@media screen  and (max-width: 800px){
+     .create-sell .list{
+            grid-template-columns: repeat(1, 1fr);
+     } 
+}
+.media{
+     display: flex;
+     gap: 1em;
+}
+.media img{
+   height: 1.8em;
+}
+ footer{
+     background-color: #361b08;
+     padding-block: 4em;
+      display: flex;
+      justify-content: space-around;
+      gap: 5em;
+      
+ }
+ footer span h2{
+     font-size: 1.5em;
+     margin-bottom: 1em;
+ }
+ footer span p{
+     margin-bottom: 1em;
+ }
+ footer ul{
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+ }
+ @media screen  and (max-width: 1000px){
+     footer{
+            display: block;
+            padding-left: 3em;
+
+     } 
+}
+
